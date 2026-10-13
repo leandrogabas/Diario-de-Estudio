@@ -39,6 +39,17 @@ podían registrar, y eso dejaba la racha actual en 0 mientras entraba en el réc
 en `pintarMapa`); rango = lunes −77 días; sesiones futuras heredadas fuera de rango se
 ignoran (no se borran); tooltip en `fixed` con coordenadas del evento (más simple y sin
 depender del layout de la sección; no desplaza el layout).
+## Control de versiones (git / GitHub)
+- Repo en GitHub: `https://github.com/leandrogabas/Diario-de-Estudio.git`, rama `main`.
+  Commit inicial f8b8179 con la web + docs + specs + tests + comandos SDD (24 archivos).
+- `.gitignore` raíz: `node_modules/`, claves API (`*.env`, `*API_KEY*`). La instalación
+  local del CLI dentro de `.opencode/` (node_modules, package.json) la excluye su propio
+  `.gitignore` anidado; `.opencode/commands/` y `.agents/` sí se versionan.
+- `opencode.json` se sube solo con el placeholder `<TU APIKEY DE CONTEXT7>`: nunca subir
+  una clave real (si alguna vez lleva una, sacarla antes del commit).
+- Flujo acordado con el usuario: un commit por cambio, mensajes en español, actualizar
+  `MEMORY.md`/`tasks.md` antes de commitear, revisar `git status`/`git diff`, y `git push`
+  al terminar cada cambio.
 ## Aprendizajes y errores a evitar
 - `AGENTS.md` describía la clave y los campos con nombres distintos a los reales:
 actualiza los docs hacia el código, nunca al revés (cambiar la clave destruye los datos
