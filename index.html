@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diario de Estudio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+
+    <header class="cabecera">
+      <h1 class="cabecera-titulo">Diario de estudio</h1>
+    </header>
+
+    <section class="racha" aria-labelledby="titulo-racha">
+      <p class="racha-etiqueta" id="titulo-racha">Racha actual</p>
+      <p class="racha-cifra"><span class="racha-fuego" aria-hidden="true">🔥</span><span id="racha-dias">0</span></p>
+      <p class="racha-texto" id="racha-texto">días seguidos estudiando</p>
+
+      <div class="racha-mejor" id="fila-mejor" hidden>
+        <span class="racha-mejor-etiqueta">Mejor racha</span>
+        <span class="racha-mejor-cifra"><span id="mejor-dias">0</span> 🔥</span>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2 class="bloque-titulo">Registrar sesión</h2>
+
+      <form id="formulario" novalidate>
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+
+        <div class="campo">
+          <label for="tema">Tema</label>
+          <input type="text" id="tema" name="tema" placeholder="Ej: JavaScript - arrays"
+                 autocomplete="off" required>
+        </div>
+
+        <div class="campo">
+          <label for="minutos">Minutos</label>
+          <input type="number" id="minutos" name="minutos" placeholder="Ej: 45"
+                 min="1" step="1" inputmode="numeric" required>
+        </div>
+
+        <p class="error" id="error" role="alert" hidden></p>
+
+        <button type="submit" class="boton">Guardar sesión</button>
+      </form>
+    </section>
+
+    <section class="bloque" aria-labelledby="titulo-resumen">
+      <h2 class="bloque-titulo" id="titulo-resumen">Resumen</h2>
+
+      <div class="resumen-fila">
+        <span>Esta semana</span>
+        <strong class="resumen-valor" id="minutos-semana">0 min</strong>
+      </div>
+
+      <div class="resumen-fila">
+        <span>Días este mes</span>
+        <strong class="resumen-valor" id="dias-mes">0 días</strong>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2 class="bloque-titulo">Sesiones</h2>
+      <p class="vacio" id="vacio" hidden>Todavía no has registrado ninguna sesión.</p>
+      <ul class="sesiones" id="sesiones"></ul>
+    </section>
+
+    <section class="bloque" id="seccion-mapa" aria-labelledby="titulo-constancia">
+      <h2 class="bloque-titulo" id="titulo-constancia">Constancia — últimas 12 semanas</h2>
+      <div class="mapa" id="mapa" role="img"></div>
+      <div class="tooltip" id="tooltip" role="status" hidden></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
